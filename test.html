@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Flowers</title>
+    <style>
+      .content {
+        font-size: 14px;
+        font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+        margin: 0;
+        display: block;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        background: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+        max-width: 100%;
+      }
+      h1 {
+        text-align: center;
+        font-size: 30px;
+        font-style: italic;
+        text-shadow: -10px 10px 20px rgb(165, 111, 216);
+        background: linear-gradient(
+          94.3deg,
+          rgba(104, 213, 253, 0.63) 0.7%,
+          rgba(169, 236, 91, 0.79) 18.6%,
+          rgba(253, 246, 116, 0.98) 39.1%,
+          rgba(255, 164, 120, 0.92) 63%,
+          rgba(250, 115, 188, 0.89) 85.3%,
+          rgb(97, 176, 242) 108.2%
+        );
+        background-blend-mode: color-burn;
+        padding: 35px 25px;
+        margin: auto;
+        opacity: 0.8;
+      }
+
+      .logo {
+        display: block;
+        margin: auto;
+        padding: 0px 0px 0px 0px;
+        border: 1px solid #885df1;
+        border-radius: 4px;
+        max-width: 100%;
+        min-width: 100%;
+      }
+
+      .most-popular {
+        text-align: center;
+        width: 120px;
+        padding: 7px 5px 5px;
+        margin: 30px 30px 15px;
+        border: 2px solid #885df1;
+        border-radius: 10px;
+        font-size: 15px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .flowers {
+        display: block;
+      }
+      .row {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        display: flex;
+      }
+      .flower-left,
+      .flower-midle,
+      .flower-right {
+        padding: 15px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 20px;
+        border: 1px solid #885df1;
+        border-radius: 40px;
+        transition: all 200ms ease-in-out;
+        max-width: 100%;
+      }
+      .flower-left:hover,
+      .flower-midle:hover,
+      .flower-right:hover {
+        background-color: #c073c6;
+        cursor: pointer;
+        border: 7px solid #8a2ac2;
+      }
+
+      .type {
+        padding: auto;
+        margin: 0;
+        font-weight: bolder;
+      }
+      .definition {
+        font-weight: lighter;
+        display: inline;
+      }
+      .image {
+        padding: 15px 0px;
+        margin: auto;
+        border-radius: 50px;
+        display: block;
+        max-width: 400px;
+        max-height: 400px;
+      }
+      .wikipedia {
+        text-align: center;
+        display: inline;
+        font-size: 10px;
+        padding: auto;
+        margin: 5px 70px 10px 70px;
+      }
+      .poster {
+        padding: 50px 0px;
+        margin: auto;
+        border-radius: 50px;
+        display: block;
+        max-width: 450px;
+        max-height: 450px;
+      }
+      .more {
+        text-align: center;
+        width: 130px;
+        padding: 7px 5px 5px;
+        margin: 30px 30px 15px;
+        border: 2px solid #885df1;
+        border-radius: 10px;
+        font-size: 15px;
+      }
+      .more:hover {
+        background-color: #9767b1;
+        color: #fff;
+        cursor: pointer;
+        border: 2px solid #fff;
+        border-radius: 15px;
+      }
+      .how {
+        text-align: center;
+        width: 130px;
+        padding: 7px 5px 5px;
+        margin: 30px 30px 15px;
+        border: 2px solid #885df1;
+        border-radius: 10px;
+        font-size: 15px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .order {
+        font-size: 15px;
+        line-height: 20px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        padding: 10px 30px 50px;
+        margin: 0;
+      }
+      button1 {
+        display: block;
+        margin: auto;
+        font-size: 20px;
+        padding: 15px 20px;
+        font-size: 15px;
+        color: #885df1;
+        background-color: #ecb1eb;
+        border: 2px solid #885df1;
+        border-radius: 25px;
+        box-shadow: -10px 10px 20px rgba(93, 91, 100, 0.7);
+        transition: all 150ms ease-in-out;
+        max-width: 200px;
+        text-align: center;
+      }
+      button2 {
+        display: block;
+        margin: auto;
+        font-size: 20px;
+        padding: 15px 20px;
+        font-size: 15px;
+        color: #885df1;
+        background-color: #ecb1eb;
+        border: 2px solid #885df1;
+        border-radius: 25px;
+        box-shadow: -10px 10px 20px rgba(93, 91, 100, 0.7);
+        transition: all 150ms ease-in-out;
+        max-width: 200px;
+        text-align: center;
+      }
+      button1:hover {
+        background-color: #9767b1;
+        color: #fff;
+        cursor: pointer;
+        border: 2px solid #fff;
+        border-radius: 15px;
+      }
+
+      button2:hover {
+        background-color: #9767b1;
+        color: #fff;
+        cursor: pointer;
+        border: 2px solid #fff;
+        border-radius: 15px;
+      }
+      .footer {
+        text-align: center;
+        margin: auto;
+        font-size: 12px;
+        color: #885df1;
+        opacity: 0.7;
+        background: linear-gradient(
+          94.3deg,
+          rgba(104, 213, 253, 0.63) 0.7%,
+          rgba(169, 236, 91, 0.79) 18.6%,
+          rgba(253, 246, 116, 0.98) 39.1%,
+          rgba(255, 164, 120, 0.92) 63%,
+          rgba(250, 115, 188, 0.89) 85.3%,
+          rgb(97, 176, 242) 108.2%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="header">
+        <h1>
+          ⁘ Flower ⁘ <br />
+          <span class="your-own">Be your own florist</span>
+        </h1>
+
+        <img
+          class="logo"
+          src="
+https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/993/original/114-1149221_clip-art-flowers-for-a-banner-iris.png?1645731746"
+        />
+        <br />
+        <br />
+
+        <hr />
+      </div>
+
+      <section class="section-flowers">
+        <div class="content-inner">
+          <div class="flowers">
+            <h3 class="most-popular">
+              <strong>Most popular</strong>
+            </h3>
+            <div class="row">
+              <div class="flower-left">
+                <span class="type"
+                  ><em>Rose:</em>
+                  <span class="definition"
+                    >A rose is a woody perennial flowering plant of the genus
+                    Rosa, in the family Rosaceae. There are over three hundred
+                    species and tens of thousands of cultivars. They form a
+                    group of plants that can be erect shrubs, climbing, or
+                    trailing, with stems that are often armed with sharp
+                    prickles.</span
+                  >
+                </span>
+                <br />
+
+                <img
+                  class="image"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/954/original/roses.jpg?1645693814"
+                />
+                <br />
+                <a
+                  class="wikipedia"
+                  href="https://en.wikipedia.org/wiki/Rose"
+                  target="_blank"
+                >
+                  Learn more
+                </a>
+              </div>
+
+              <div class="flowers flower-midle">
+                <span class="type">
+                  <em>Daisy:</em>
+                  <span class="definition"
+                    >Bellis perennis, the daisy, is a common European species of
+                    the family Asteraceae, often considered the archetypal
+                    species of that name. To distinguish this species from other
+                    "daisies" it is sometimes qualified as common daisy, lawn
+                    daisy or English daisy.</span
+                  >
+                </span>
+                <img
+                  class="image"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/949/original/daisy.jpg?1645693589"
+                />
+                <br />
+                <a
+                  class="wikipedia"
+                  href="https://en.wikipedia.org/wiki/Bellis_perennis"
+                  target="_blank"
+                >
+                  Learn more
+                </a>
+              </div>
+              <div class="flowers flower-right">
+                <span class="type">
+                  <em>Sunflower:</em>
+                  <span class="definition"
+                    >Helianthus is a genus comprising about 70 species of annual
+                    and perennial flowering plants in the daisy family
+                    Asteraceae. Except for three South American species, the
+                    species of Helianthus are native to North America and
+                    Central America.</span
+                  >
+                </span>
+
+                <img
+                  class="image"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/950/original/sunflower.jpg?1645693608"
+                />
+                <a
+                  class="wikipedia"
+                  href="https://en.wikipedia.org/wiki/Helianthus"
+                  target="_blank"
+                >
+                  Learn more
+                </a>
+
+                <br />
+              </div>
+            </div>
+            <div class="row">
+              <div class="flowers flower-left">
+                <span class="type">
+                  <em>Poppy:</em>
+                  <span class="definition"
+                    >Poppies are herbaceous annual, biennial or short-lived
+                    perennial plants. Some species are monocarpic, dying after
+                    flowering. Poppies can be over a metre tall with flowers up
+                    to 15 centimetres across.The petals are showy, may be of
+                    almost any colour and some have markings.</span
+                  >
+                </span>
+
+                <img
+                  class="image"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/028/001/original/mac.jpg?1645733301"
+                />
+                <br />
+                <a
+                  class="wikipedia"
+                  href="https://en.wikipedia.org/wiki/Helianthus"
+                  target="_blank"
+                >
+                  Learn more
+                </a>
+              </div>
+              <div class="flowers flower-midle">
+                <span class="type">
+                  <em>Tulip:</em>
+                  <span class="definition"
+                    >Tulips are a genus of spring-blooming perennial herbaceous
+                    bulbiferous geophytes. The flowers are usually large, showy
+                    and brightly colored, generally red, pink, yellow, or white.
+                    They often have a different colored blotch at the base of
+                    the tepals, internally.</span
+                  >
+                </span>
+
+                <img
+                  class="image"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/998/original/tulips-multicolored.jpg?1645732456"
+                />
+                <br />
+                <a
+                  class="wikipedia"
+                  href="https://en.wikipedia.org/wiki/Tulip"
+                  target="_blank"
+                >
+                  Learn more
+                </a>
+              </div>
+              <div class="flowers flower-right">
+                <img
+                  class="poster"
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/946/original/flowers.jpg?1645693569"
+                />
+                <a class="more"> More flowers here </a>
+              </div>
+            </div>
+          </div>
+          <nav>....</nav>
+        </div>
+      </section>
+      <h3 class="how">
+        <strong>How it works?</strong>
+      </h3>
+      <p class="order">
+        Choose from our list as many types of flowers you want, and how many of
+        each you want in the bouquet. We will make it pretty for you adding
+        other decoratives elements.
+        <br />
+        If you don't trust your choises, you can choose a premade bouquet from
+        our list.
+      </p>
+
+      <button1>Make your own bouquet</button1>
+      <br />
+      <br />
+
+      <button2>Order a premade bouquet</button2>
+      <br />
+      <br />
+
+      <div class="footer">
+        😁 This website was build by 😎
+        <span>Denisa-Maria Tudor</span>
+      </div>
+    </div>
+    <script>
+      function ownBouquet() {
+        let name = prompt("What is your name?");
+        name = name.toUpperCase();
+        name = name.trim();
+        let favorite = prompt("What flowers did you choosed?");
+        favorite = favorite.trim();
+
+        if (name !== 0 && favorite !== 0) {
+          alert(
+            `Thank you for your order ${name} ! We will deliver your ${favorite} 💐 as quekly as possible.`
+          );
+        } else {
+          alert("Thank you for your order! Nice chooise!");
+        }
+      }
+      let ownBouquetBotton = document.querySelector("button1");
+
+      ownBouquetBotton.addEventListener("click", ownBouquet);
+
+      function premadeBouquet() {
+        let name = prompt("What is your name?");
+        name = name.toUpperCase();
+        name = name.trim();
+        let favorite = prompt("What flowers did you ordered?");
+        favorite = favorite.trim();
+
+        if (name !== 0 && favorite !== 0) {
+          alert(
+            `Thank you for your order ${name} ! We will deliver your ${favorite} 💐 as quekly as possible.`
+          );
+        } else {
+          alert("We are handeling your order!");
+        }
+      }
+      let premadeBouquetBotton = document.querySelector("button2");
+
+      premadeBouquetBotton.addEventListener("click", premadeBouquet);
+    </script>
+  </body>
+</html>
